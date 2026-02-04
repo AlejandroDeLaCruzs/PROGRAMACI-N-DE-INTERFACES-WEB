@@ -1,0 +1,34 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.operaciones {
+  display: flex;
+  flex-direction:column;
+  align-self:auto;
+  
+}
+
+.botones {
+  display: flex;
+  align-items: center;
+  flex-direction:row;
+}
+
+.aux {
+  display: flex;
+  flex-direction: column;
+}
+.cero {
+  display: flex;
+  justify-content: center;
+}
+
+.prueba {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+}
