@@ -1,31 +1,44 @@
 import { useState } from "react";
 
 export const Botones = () => {
-  const [num1, setNum1] = useState<number>(-1);
-  const [num2, setNum2] = useState<number>(-1);
-  const [texto_operacion, setTextoOperacion] = useState<number>(-1);
+  const [inputNums, setinputNums] = useState<string>("");
+  const [num1, setNum1] = useState<number>(0);
+  const [num2, setNum2] = useState<number>(0);
+  const [texto_operacion, setTextoOperacion] = useState<number>(0);
   const [operacion, setOperacion] = useState<string>("0");
 
-  const handleCalculatorInput = (data: number | string) => {
-    if (typeof data == "number") {
-      if (num1 == -1) {
-        setNum1(data);
-        console.log(data);
-        return;
-      }
-      if (num2 == -1) {
-        setNum2(data);
-        console.log(data);
-        return;
-      }
-    } else {
-      setOperacion(data);
-      console.log(data);
-      return;
-    }
+  const handleOperation = (operation: string) => {
+    setNum1(parseInt(inputNums));
+    setTextoOperacion(0);
+    setOperacion(operation);
+    setinputNums("");
   };
 
-  const solution = () => {};
+  const handleCalculatorInput = (data: number) => {
+    const numero = inputNums + data;
+    setinputNums(numero);
+    setTextoOperacion(Number.parseInt(numero));
+  };
+
+  const solution = () => {
+    const n2 = parseInt(inputNums);
+    console.log("n1" + num1);
+    console.log("n2" + n2);
+    if (operacion === "+") {
+      const resultado = num1 + n2;
+      setTextoOperacion(resultado);
+      return;
+    }
+    if (operacion === "-") {
+      setTextoOperacion(num1 - n2);
+    }
+    if (operacion === "*") {
+      setTextoOperacion(num1 * n2);
+    } else {
+      setTextoOperacion(num1 / n2);
+    }
+    setOperacion("0");
+  };
 
   return (
     <div className="main">
@@ -40,7 +53,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(1);
-                    setTextoOperacion(1);
                   }}
                 >
                   1
@@ -48,7 +60,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(2);
-                    setTextoOperacion(2);
                   }}
                 >
                   2
@@ -56,7 +67,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(3);
-                    setTextoOperacion(3);
                   }}
                 >
                   3
@@ -66,7 +76,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(4);
-                    setTextoOperacion(4);
                   }}
                 >
                   4
@@ -74,7 +83,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(5);
-                    setTextoOperacion(5);
                   }}
                 >
                   5
@@ -82,7 +90,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(6);
-                    setTextoOperacion(6);
                   }}
                 >
                   6
@@ -92,7 +99,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(7);
-                    setTextoOperacion(7);
                   }}
                 >
                   7
@@ -100,7 +106,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(8);
-                    setTextoOperacion(8);
                   }}
                 >
                   8
@@ -108,7 +113,6 @@ export const Botones = () => {
                 <button
                   onClick={() => {
                     handleCalculatorInput(9);
-                    setTextoOperacion(9);
                   }}
                 >
                   9
@@ -116,7 +120,7 @@ export const Botones = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="numerosraros">
             <button
               onClick={() => {
                 handleCalculatorInput(0);
@@ -124,34 +128,40 @@ export const Botones = () => {
             >
               0
             </button>
-           
+            <button
+              onClick={() => {
+                solution();
+              }}
+            >
+              =
+            </button>
           </div>
         </div>
         <div className="operaciones">
           <button
             onClick={() => {
-              handleCalculatorInput("+");
+              handleOperation("+");
             }}
           >
             +
           </button>
           <button
             onClick={() => {
-              handleCalculatorInput("-");
+              handleOperation("-");
             }}
           >
             -
           </button>
           <button
             onClick={() => {
-              handleCalculatorInput("/");
+              handleOperation("/");
             }}
           >
             /
           </button>
           <button
             onClick={() => {
-              handleCalculatorInput("*");
+              handleOperation("*");
             }}
           >
             *
