@@ -50,73 +50,36 @@ export const Botones = () => {
           <div className="botones">
             <div>
               <div>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("1");
-                  }}
-                >
-                  1
-                </button>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("2");
-                  }}
-                >
-                  2
-                </button>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("3");
-                  }}
-                >
-                  3
-                </button>
+                <div>
+                  {[1, 2, 3].map((n) => (
+                    <button
+                      key={n}
+                      onClick={() => handleCalculatorInput(n.toString())}
+                    >
+                      {n}
+                    </button>
+                  ))}
+                </div>
               </div>
               <div>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("4");
-                  }}
-                >
-                  4
-                </button>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("5");
-                  }}
-                >
-                  5
-                </button>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("6");
-                  }}
-                >
-                  6
-                </button>
+                {[4, 5, 6].map((n) => (
+                  <button
+                    key={n}
+                    onClick={() => handleCalculatorInput(n.toString())}
+                  >
+                    {n}
+                  </button>
+                ))}
               </div>
               <div>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("7");
-                  }}
-                >
-                  7
-                </button>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("8");
-                  }}
-                >
-                  8
-                </button>
-                <button
-                  onClick={() => {
-                    handleCalculatorInput("9");
-                  }}
-                >
-                  9
-                </button>
+                {[7, 8, 9].map((n) => (
+                  <button
+                    key={n}
+                    onClick={() => handleCalculatorInput(n.toString())}
+                  >
+                    {n}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -138,34 +101,11 @@ export const Botones = () => {
           </div>
         </div>
         <div className="operaciones">
-          <button
-            onClick={() => {
-              handleOperation("+");
-            }}
-          >
-            +
-          </button>
-          <button
-            onClick={() => {
-              handleOperation("-");
-            }}
-          >
-            -
-          </button>
-          <button
-            onClick={() => {
-              handleOperation("/");
-            }}
-          >
-            /
-          </button>
-          <button
-            onClick={() => {
-              handleOperation("*");
-            }}
-          >
-            *
-          </button>
+          {["+", "-", "*", "/"].map((n) => (
+            <button key={n} onClick={() => handleOperation(n)}>
+              {n}
+            </button>
+          ))}
         </div>
       </div>
     </div>
