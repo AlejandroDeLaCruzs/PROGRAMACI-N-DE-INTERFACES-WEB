@@ -45,42 +45,41 @@ export const Botones = () => {
       <div className="display">
         <h1>{texto_completo}</h1>
       </div>
+      <div>
+        <button>c</button>
+      </div>
       <div className="prueba">
         <div className="aux">
-          <div className="botones">
+          <div>
             <div>
-              <div>
-                <div>
-                  {[1, 2, 3].map((n) => (
-                    <button
-                      key={n}
-                      onClick={() => handleCalculatorInput(n.toString())}
-                    >
-                      {n}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                {[4, 5, 6].map((n) => (
-                  <button
-                    key={n}
-                    onClick={() => handleCalculatorInput(n.toString())}
-                  >
-                    {n}
-                  </button>
-                ))}
-              </div>
-              <div>
-                {[7, 8, 9].map((n) => (
-                  <button
-                    key={n}
-                    onClick={() => handleCalculatorInput(n.toString())}
-                  >
-                    {n}
-                  </button>
-                ))}
-              </div>
+              {[1, 2, 3].map((n) => (
+                <button
+                  key={n}
+                  onClick={() => handleCalculatorInput(n.toString())}
+                >
+                  {n}
+                </button>
+              ))}
+            </div>
+            <div>
+              {[4, 5, 6].map((n) => (
+                <button
+                  key={n}
+                  onClick={() => handleCalculatorInput(n.toString())}
+                >
+                  {n}
+                </button>
+              ))}
+            </div>
+            <div>
+              {[7, 8, 9].map((n) => (
+                <button
+                  key={n}
+                  onClick={() => handleCalculatorInput(n.toString())}
+                >
+                  {n}
+                </button>
+              ))}
             </div>
           </div>
           <div className="numerosraros">

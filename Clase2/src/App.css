@@ -11,22 +11,24 @@
   align-self:auto;
   
 }
+
+button {
+  padding: 20px;       /* aumenta el tamaño interior del botón */
+  font-size: 24px;     /* aumenta el tamaño del número que se ve */
+  width: 60px;         /* ancho fijo */
+  height: 60px;        /* alto fijo */
+  border-radius: 10px; /* bordes redondeados */
+  margin: 5px;         /* separación entre botones */
+}
+
 .display {
-  /*border: 2px solid black;*/
+  border: 2px solid black;
 }
-.botones {
-  display: flex;
-  align-items: center;
-  flex-direction:row;
-}
+
 
 .aux {
   display: flex;
-  flex-direction: column;
-}
-.cero {
-  display: flex;
-  justify-content: center;
+  flex-direction:column;
 }
 
 .prueba {
