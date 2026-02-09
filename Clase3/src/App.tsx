@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { api } from "./api/api";
-import { Character } from "./components/character";
+import { Character, type CharacterType } from "./components/character";
 
 import "./App.css";
 
 const App = () => {
-  const [pers, setCharacter] = useState("0");
+  const [pers, setCharacter] = useState<CharacterType>();
   const [id, setId] = useState<string>("");
   const [idBusqueda, seIdBusqueda] = useState<string>("");
 
