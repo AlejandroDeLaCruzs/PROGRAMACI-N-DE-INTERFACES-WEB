@@ -1,7 +1,12 @@
-
 .maincointener {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+.charactersCointer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 20px; /* espacio entre personajes */
+  justify-items: center; /* centra los items horizontalmente */
 }

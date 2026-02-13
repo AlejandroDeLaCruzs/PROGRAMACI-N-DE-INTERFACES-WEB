@@ -21,9 +21,11 @@ const App = () => {
       <h1>Busqueda rick morty</h1>
       <input onChange={(e) => setInputName(e.target.value)}></input>
       <button onClick={() => setName(inputName)}> buscar</button>
-      {characters?.map((e) => (
-        <Character key={e.id} character={e} />
-      ))}
+      <div className="charactersCointer">
+        {characters?.map((e) => (
+          <Character key={e.id} character={e} />
+        ))}
+      </div>
     </div>
   );
 };
