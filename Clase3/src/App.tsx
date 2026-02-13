@@ -1,28 +1,30 @@
 import { useEffect, useState } from "react";
-import { api } from "./api/api";
-import { Character, type CharacterType } from "./components/character";
 
 import "./App.css";
+import { Character } from "./components";
+import { api } from "./api/api";
+import type { CharacterType } from "./types";
 
 const App = () => {
-  const [pers, setCharacter] = useState<CharacterType>();
-  const [id, setId] = useState<string>("");
-  const [idBusqueda, seIdBusqueda] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [inputName, setInputName] = useState<string>("");
+  const [characters, setCharacter] = useState<CharacterType[]>();
 
   useEffect(() => {
-    api.get(`/character/${idBusqueda}`).then((res) => {
-      console.log(res);
-      setCharacter(res.data);
+    api.get(`character?name=${name}`).then((res) => {
+      setCharacter(res.data.results);
     });
-  }, [idBusqueda]);
+  }, [name]);
 
   return (
-    <>
+    <div className="maincointener">
       <h1>Busqueda rick morty</h1>
-      <input onChange={(e) => setId(e.target.value)}></input>
-      <button onClick={() => seIdBusqueda(id)}> buscar</button>
-      <Character character={pers}></Character>
-    </>
+      <input onChange={(e) => setInputName(e.target.value)}></input>
+      <button onClick={() => setName(inputName)}> buscar</button>
+      {characters?.map((e) => (
+        <Character key={e.id} character={e} />
+      ))}
+    </div>
   );
 };
 
