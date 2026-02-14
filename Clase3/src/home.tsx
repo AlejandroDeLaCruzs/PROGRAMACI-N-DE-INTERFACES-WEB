@@ -3,7 +3,7 @@ import "./App.css";
 import { Character } from "./components";
 import { api } from "./api/api";
 import type { CharacterType } from "./types";
-import { useNavigate } from "react-router-dom";
+
 
 
 export const InfoCharacters = () => {
