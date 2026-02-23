@@ -1,0 +1,14 @@
+.CharacterCointener {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.dataCointer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+ 
+}

@@ -1,16 +1,33 @@
 
 "use client"
+import { api } from "@/lib/api/api";
+import { Character } from "@/types";
+import { useEffect, useState } from "react";
+import { CharacterData } from "./../components/Character/character";
+import "./globals.css"
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+export const Home = () => {
+  const [personajes, setPersonajes] = useState<Character[] | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-export default function Home() {
-  const router = useRouter();
+  useEffect(() => {
+    api
+      .get("/character")
+      .then((res) => {
+        setPersonajes(res.data.results);
+        console.log(res.data);
+      })
+      .catch((e) => console.log(e))
+      .finally(() => setLoading(false));
+  }, []); 
   return (
-    <div>
-      <h1>hola</h1>
-      <Link href="/prueba">pincha aqui para la prueba</Link>
-      <button onClick={() => router.push('/prueba')}>pulsa</button>
+    <div className="charactersCointer">
+      {loading && <p>Cargando...</p>}
+      {!loading &&
+        personajes &&
+        personajes.map((e) => <CharacterData key={e.id} character={e} />)}
     </div>
   );
-}
+};
+
+export default Home;

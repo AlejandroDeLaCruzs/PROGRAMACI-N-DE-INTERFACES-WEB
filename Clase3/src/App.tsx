@@ -1,14 +1,9 @@
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { InfoCharacters } from "./home";
 import Detail from "./detali";
-import { useState } from "react";
+
 
 export const App = () => {
-  const [info, setInfo] = useState<string[]>([
-    "characters",
-    "locations",
-    "episode",
-  ]);
   return (
     <BrowserRouter>
       <NavBar/>
