@@ -1,0 +1,25 @@
+html,
+body {
+  max-width: 100vw;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+  display: flex;
+  min-width: 100vw;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.elementoLista:hover {
+  color: red;
+  text-decoration: line-through;
+}
+
+.elementoLista {
+  cursor: pointer;
+}
