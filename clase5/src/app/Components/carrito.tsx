@@ -1,3 +1,4 @@
+"use client"
 import { Producto } from "../page";
 
 type Params = {
