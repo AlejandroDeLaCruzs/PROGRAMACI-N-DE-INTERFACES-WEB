@@ -12,6 +12,7 @@ export type Params = {
 export const ProductComponent = ({ name, lista, setLista }: Params) => {
   return (
     <div className="main">
+        
       <h1>{name}</h1>
       <button onClick={() => {
         setLista([...lista, {name, id: String(Math.random())}])
