@@ -23,3 +23,37 @@ body {
 .elementoLista {
   cursor: pointer;
 }
+
+.carritoCointener {
+  background-color: rgba(218, 194, 194, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column; 
+}
+
+.carritoCointener button{
+  border-radius: 20px;
+  max-height: 20px;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+}
+.innerContiner{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.carritoImg {
+  max-width: 40px;
+  max-height: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+ 
+}
