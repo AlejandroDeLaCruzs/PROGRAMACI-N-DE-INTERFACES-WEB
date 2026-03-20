@@ -1,0 +1,25 @@
+.outputCointer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid grey;
+}
+.productCointer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.productCointer img {
+  width: 300px;
+  height: 300px;
+}
+
+.botonCompra {
+  background-color: orange;
+  color: black;
+  border-radius: 13px;
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+}
