@@ -2,8 +2,10 @@
 import { createContext, useContext, useState } from "react";
 
 type ListaContext = {
+  inputBusqueda: string;
   idsFavorito: string[];
   carrito: string[];
+  setInputBusqueda: (item : string) => void;
   addFavorito: (item: string) => void;
   addCarrito: (item: string) => void;
 };
@@ -17,6 +19,7 @@ type Params = {
 export const ListaProviader = ({ children }: Params) => {
   const [idsFavorito, setidsFavorito] = useState<string[]>([]);
   const [carrito, setAddCarrito] = useState<string[]>([]);
+  const [inputBusqueda, establecerInputBusqueda] = useState<string>("");
 
   const addFavorito = (item: string) => {
     setidsFavorito([...idsFavorito, item]);
@@ -26,9 +29,12 @@ export const ListaProviader = ({ children }: Params) => {
     setAddCarrito([...carrito, item]);
   };
 
+  const setInputBusqueda = (item: string) => {
+    establecerInputBusqueda(item);
+  }
   return (
     <contexto.Provider
-      value={{ addCarrito, addFavorito, carrito, idsFavorito }}
+      value={{ addCarrito, addFavorito, carrito, idsFavorito, inputBusqueda, setInputBusqueda }}
     >
       {children}
     </contexto.Provider>

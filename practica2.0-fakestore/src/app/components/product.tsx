@@ -13,7 +13,7 @@ export const ProductComponent = ({ product }: Params) => {
 
   return (
     <div className="outputCointer">
-      <Link href={`product/${product.id}`}>
+      <Link href={`/product/${product.id}`}>
         <div className="productCointer">
           <h3>{product.title}</h3>
           <img src={product.images.at(0)} />

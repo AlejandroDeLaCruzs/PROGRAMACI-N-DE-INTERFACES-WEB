@@ -3,30 +3,34 @@
   width: 100%;
   align-items: center;
   position: relative; /* 🔥 CLAVE */
-  
+}
+
+.mainCointener {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(20, 41, 71);
 }
 
 .infoApp h1 {
   color: white;
-
 }
 
-
-.carrito a {         
+.carrito a {
   cursor: pointer;
 }
 
 .carrito img {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 .logo {
   width: 50px;
   height: 50px;
 }
 .input input {
-  width: 400px;     
-  height: 40px;     
+  width: 400px;
+  height: 40px;
   font-size: 18px;
 }
 .infoApp {
@@ -37,13 +41,12 @@
 .input {
   position: absolute;
   right: 50%;
-
 }
 
 .right {
-  margin-left: auto; 
+  margin-left: auto;
 }
 
-.carrito{
-    margin-left: auto;
+.carrito {
+  margin-left: auto;
 }
