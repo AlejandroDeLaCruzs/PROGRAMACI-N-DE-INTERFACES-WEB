@@ -14,10 +14,16 @@
 }
 
 
-.header {
+.headerC {
   min-width: 100vw;
   gap: 30px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
+  background-color: rgb(20, 41, 71);
+}
+
+.menu {
+  width: 30px;
+  height: 30px;
 }
