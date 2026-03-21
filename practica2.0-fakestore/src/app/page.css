@@ -2,12 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px
 
 }
 
 .productosLista {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-items: center;
+}
+
+
+.header {
+  min-width: 100vw;
+  gap: 30px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }

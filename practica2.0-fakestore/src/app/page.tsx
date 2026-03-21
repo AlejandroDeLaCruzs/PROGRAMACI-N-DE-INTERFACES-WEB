@@ -1,15 +1,19 @@
 "use client";
 
-import { getAllProducts } from "@/lib/api/products";
+import { getAllProducts, getProductByName } from "@/lib/api/products";
 import { Product } from "@/types";
 import { useEffect, useState } from "react";
 import { ProductComponent } from "./components/product";
 import "./page.css";
 import Link from "next/link";
+import { Header } from "./components/header";
+import { MenuCategorias } from "./components/menuCategorioas";
 
 export const Home = () => {
-  const [produts, setProducst] = useState<Product[] | null>(null);
+  const [produts, setProducst] = useState<Product[]>([]);
   const [loading, setLaoding] = useState<boolean>(true);
+  const [showModal, setShowModal] = useState<boolean>(false);
+
 
   useEffect(() => {
     getAllProducts()
@@ -20,8 +24,10 @@ export const Home = () => {
 
   return (
     <div className="mainCointener">
-      <div>
-        <h1>fake store api</h1>
+      <div className="header">
+        {showModal && <MenuCategorias setShowModal={setShowModal}/>}
+        <button onClick={() => setShowModal(true)}>menu</button>
+        <Header setProducst={setProducst} setLaoding={setLaoding} />
         <Link href={"/carrito"}>
           <p>carrito</p>
         </Link>
