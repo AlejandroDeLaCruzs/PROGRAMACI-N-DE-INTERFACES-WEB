@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: rgb(20, 41, 71);
+  background-color: #232F3E;
 }
 
 .infoApp h1 {
@@ -36,6 +36,7 @@
 .infoApp {
   display: flex;
   align-items: center;
+  padding-left: 10px;
 }
 
 .input {
@@ -51,5 +52,20 @@
   margin-left: auto;
 }
 .menus {
-    background-color:rgb(82, 82, 117);
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+  background-color: #37475A;
+  align-items: center;
+  color: white;
+  gap: 25px
+}
+
+.menuCategoria {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  color: white;
 }

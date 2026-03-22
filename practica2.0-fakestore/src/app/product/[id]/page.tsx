@@ -16,7 +16,7 @@ export const ProductPage = () => {
       .then((res) => setProduct(res))
       .catch((e) => console.log(e))
       .finally(() => setLoading(false));
-  });
+  }, []);
 
   return (
     <div>

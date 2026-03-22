@@ -54,12 +54,27 @@ export const Header = () => {
 
       <div className="menus">
         {showModal && <MenuCategorias setShowModal={setShowModal} />}
-        <img
-          src={"/menu.png"}
-          alt="Logo"
-          className="menu"
-          onClick={() => setShowModal(true)}
-        />
+        <div className="menuCategoria">
+          <img
+            src={"/menu.png"}
+            alt="Logo"
+            className="menu"
+            onClick={() => setShowModal(true)}
+          />
+          <h4>Todo</h4>
+        </div>
+        <div>
+          <p>Haul</p>
+        </div>
+        <div>
+          <p>Supermercado</p>
+        </div>
+        <div>
+          <p>Últimas novedades</p>
+        </div>
+        <div>
+          <p>Lo más vendido</p>
+        </div>
       </div>
     </div>
   );

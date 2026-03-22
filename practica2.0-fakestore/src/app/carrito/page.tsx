@@ -1,4 +1,5 @@
 "use client";
+
 import { useLista } from "@/context/listacontext";
 import { getProductById } from "@/lib/api/products";
 import { Product } from "@/types";
