@@ -1,0 +1,17 @@
+.contiener {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  background-color: white;
+  width: 350;
+  height: 400;
+}
+
+.boxConteiner {
+  width: 350;
+  height: 400;
+}
+.contiener img {
+  width: 100%;
+  height: 100%;
+}

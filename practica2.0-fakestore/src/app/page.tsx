@@ -1,24 +1,37 @@
 "use client";
 
-import { getAllProducts, getProductByName } from "@/lib/api/products";
-import { Product } from "@/types";
 import { useEffect, useState } from "react";
-import { ProductComponent } from "./components/product";
 import "./page.css";
-import { Header } from "./components/header";
-import { MenuCategorias } from "./components/menuCategorioas";
+import {
+  getProducstOrderByDiscount,
+  getProducstOrderByRating,
+} from "@/lib/api/products";
+import { Product } from "@/types";
+import ImagesComponentMainPage from "./components/imagesMainPage";
+import BoxMainPage from "./components/boxMainPage";
 
 export const Home = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [productsRaiting, setProducstRating] = useState<Product[]>([]);
+  const [productsDiscount, setProducstDisocunt] = useState<Product[]>([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getProducstOrderByRating().then((res) => setProducstRating(res));
+    getProducstOrderByDiscount().then((res) => setProducstDisocunt(res));
+  }, []);
 
   return (
-    <div className="mainCointener">
-      <div className="headerC">
-        <div>
-          
-        </div>
+    <div className="Conteiner">
+      <div className="imageMainPage">
+        <ImagesComponentMainPage />
+      </div>
+      <div className="contienerDisplay">
+        <BoxMainPage product={productsDiscount}>
+          <h3>Ofertas Top</h3>
+        </BoxMainPage>
+        <BoxMainPage product={productsRaiting}>
+          <h3>Mejor Valorados</h3>
+        </BoxMainPage>
       </div>
     </div>
   );

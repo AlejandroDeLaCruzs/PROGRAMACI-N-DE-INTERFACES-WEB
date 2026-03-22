@@ -22,15 +22,10 @@ export const SearchPage = () => {
   }, []);
 
   return (
-    <div className="mainCointener">
-      <div className="headerC">
-       
-      </div>
-      <div className="productosLista">
-        {!loading &&
-          produts &&
-          produts.map((e) => <ProductComponent key={e.id} product={e} />)}
-      </div>
+    <div className="productosLista">
+      {!loading &&
+        produts &&
+        produts.map((e) => <ProductComponent key={e.id} product={e} />)}
     </div>
   );
 };

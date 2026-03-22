@@ -1,21 +1,16 @@
 
+.Conteiner {
+  display:flex;
+  flex-direction: column;
+}
 
-.productosLista {
+
+.contienerDisplay {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  justify-items: center;
 }
 
-
-.headerC {
-  min-width: 100vw;
-  gap: 30px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  background-color: rgb(20, 41, 71);
-}
 
 .menu {
   width: 30px;

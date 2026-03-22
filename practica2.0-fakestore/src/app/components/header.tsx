@@ -1,6 +1,5 @@
 "use client";
 
-
 import { Product } from "@/types";
 import { useState } from "react";
 import "./header.css";
@@ -15,13 +14,7 @@ type Params = {
 export const Header = () => {
   const [input, setInput] = useState<string>("");
   const router = useRouter();
-   const [showModal, setShowModal] = useState<boolean>(false);
-
-  /*const fetchProducts = async (name: string) => {
-    if (name) getProductByName(name).then((res) => setProducst(res));
-    if (name == "") getAllProducts().then((res) => setProducst(res.products));
-    setLaoding(false);
-  };*/
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
     <div className="mainCointener">
@@ -31,7 +24,9 @@ export const Header = () => {
             src={"/logo.2e155839.png"}
             className="logo"
             alt="Logo"
-            onClick={() => router.push("/")}
+            onClick={() => {
+              (router.push("/"), setInput(""));
+            }}
           />
           <h1>Fake Store API</h1>
         </div>
@@ -42,7 +37,7 @@ export const Header = () => {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                if(input== "") router.replace("/");
+                if (input == "") router.replace("/");
                 else router.replace(`/search/${input}`);
               }
             }}
@@ -57,7 +52,7 @@ export const Header = () => {
         </div>
       </div>
 
-      <div>
+      <div className="menus">
         {showModal && <MenuCategorias setShowModal={setShowModal} />}
         <img
           src={"/menu.png"}
