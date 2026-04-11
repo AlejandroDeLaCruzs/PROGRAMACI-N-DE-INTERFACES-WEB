@@ -8,6 +8,7 @@ export const CocktailInfo = () => {
   const [cocktail, setCocktail] = useState<Drink | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const { id } = useParams();
+
   useEffect(() => {
     getCocktailById(id).then((res) => {
       setCocktail(res.drinks.at(0));
@@ -19,7 +20,7 @@ export const CocktailInfo = () => {
   return (
     <>
       {cocktail && (
-        <div>
+        <div className="CocktailContiener">
           {cocktail?.strDrinkThumb && <img src={cocktail?.strDrinkThumb} />}
           <div>
             <h2>{cocktail.strDrink}</h2>

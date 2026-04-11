@@ -53,18 +53,32 @@
 }
 
 .contienerAñadirCarrito {
-    gap: 10px;
-    width: 230px;
-    border: 1px solid grey ;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
+  padding: 10px;
+  display: flex;
+  width: 500px;
+  height: 500px;
+  gap: 10px;
+  width: 230px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
 }
 
 .stockOK {
-    color: rgb(26, 195, 11);
+  color: rgb(26, 195, 11);
 }
 
 .stockKO {
-    color: red;
+  color: red;
+}
+
+.seleccionarCantidad {
+    display: flex;
+    flex-direction: column; 
+}
+
+.botonañadirCesta {
+    color: black;
+    background-color: rgb(255, 205, 111);
 }

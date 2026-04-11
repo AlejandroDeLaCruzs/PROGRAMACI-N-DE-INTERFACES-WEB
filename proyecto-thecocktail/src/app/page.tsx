@@ -1,10 +1,11 @@
 "use client";
 
 import "./globals.css";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { getCocktailByName } from "@/lib/api/cocktails";
 import Cocktail from "@/components/cocktai";
 import { Drink } from "@/types";
+import "./page.css"
 
 export const Home = () => {
   const [inputName, setInputName] = useState<string>("");
@@ -44,8 +45,10 @@ export const Home = () => {
       </button>
 
       {error && <h3>Error: {error}</h3>}
-      {!loading &&
-        cocktails.map((e) => <Cocktail key={e.idDrink} cocktail={e} />)}
+      <div className="cocktailsConteiner">
+        {!loading && cocktails &&
+          cocktails.map((e) => <Cocktail key={e.idDrink} cocktail={e} />)}
+      </div>
     </div>
   );
 };

@@ -2,12 +2,16 @@ import { useLista } from "@/context/listacontext";
 import { Product } from "@/types";
 import "./productDetails.css";
 import { useState } from "react";
+
 type Params = {
   product: Product;
 };
+
 export const ProductDetail = ({ product }: Params) => {
   const { addFavorito, addCarrito } = useLista();
   const [showModalCantitadad, setshowModalCantitadad] = useState<boolean>();
+  const [cantidadMarcado, setcantidadMarcado] = useState<number>(1);
+  const cantidad = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <div className="detialContiener">
@@ -43,6 +47,31 @@ export const ProductDetail = ({ product }: Params) => {
         ) : (
           <h3 className="stockKO">Out of Stock</h3>
         )}
+        <button
+          className="cantidad"
+          onClick={() => setshowModalCantitadad(true)}
+        >
+          Cantidad: {cantidadMarcado}
+        </button>
+        <div className="seleccionarCantidad">
+          {showModalCantitadad &&
+            cantidad.map((e) => (
+              <button
+                onClick={() => {
+                  setshowModalCantitadad(false);
+                  setcantidadMarcado(e);
+                }}
+              >
+                {e}
+              </button>
+            ))}
+        </div>
+        <button
+          className="botonañadirCesta"
+          onClick={() => addCarrito(String(product.id))}
+        >
+          Añadir a la cesta
+        </button>
       </div>
     </div>
   );
