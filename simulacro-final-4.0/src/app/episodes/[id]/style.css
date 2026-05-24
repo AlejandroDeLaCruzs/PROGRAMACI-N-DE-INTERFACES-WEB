@@ -1,0 +1,20 @@
+.EpiosdeById {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:  100%;
+}
+
+.tituloEpisode {
+    color: rosybrown;
+    background-color: brown;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.characterByEpiosde {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

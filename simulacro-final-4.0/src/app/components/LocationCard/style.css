@@ -1,0 +1,11 @@
+.locationContenier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    background-color: cadetblue;
+}
+
+.locationContenier h1 {
+    color: blue;
+}
